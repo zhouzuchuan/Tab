@@ -41,8 +41,9 @@
     </ul>
   </div>
 </body>
-<script src="js/jquery.min.js"></script>
+<!-- <script src="js/jquery.min.js"></script> -->
 <script src="src/tab.js"></script>
+<!-- <script src="js/tab.js"></script> -->
 <script>
     new Tab({
         selector: 'wj-tab',
@@ -52,7 +53,9 @@
         // },
         currentClass: 'current',
         defaultPos: 2,
-        eventType: 'hover'
+        eventType: {
+          w: 'click'
+        }
     })
 </script>
 </html>

@@ -24,8 +24,8 @@ gulp.task('js' , function () {
 });
 
 gulp.task('server', function() {
-  browserSync.init({ server: { baseDir: defaultInfo.develop } });
-  gulp.watch('./').on('change', function () { browserSync.reload(); });
+  browserSync.init({ server: { baseDir: './' } });
+  gulp.watch('./**').on('change', function () { browserSync.reload(); });
 });
 
 
