@@ -8,53 +8,64 @@
 <link rel="stylesheet" href="style/css.css" />
 </head>
 <body>
-  <div class="tabBtn tac">
-    <ul class="fl_dib">
-      <li wj-tab-btn="a">1</li>
-      <li wj-tab-btn="b">2</li>
-      <li wj-tab-btn="c">3</li>
-      <li wj-tab-btn="d">4</li>
-    </ul>
-  </div>
-  <div class="tabMain">
-    <ul>
-      <li wj-tab-main="a"><span class="tabMainItem">display 1</span></li>
-      <li wj-tab-main="b"><span class="tabMainItem">display 2</span></li>
-      <li wj-tab-main="c"><span class="tabMainItem">display 3</span></li>
-      <li wj-tab-main="d"><span class="tabMainItem">display 4</span></li>
-    </ul>
-  </div>
-  <div class="tabBtn tac">
-    <ul class="fl_dib">
-      <li wj-tab-btn="e#w">5</li>
-      <li wj-tab-btn="f#w">6</li>
-      <li wj-tab-btn="g#w">7</li>
-      <li wj-tab-btn="h#w">8</li>
-    </ul>
-  </div>
-  <div class="tabMain">
-    <ul>
-      <li wj-tab-main="e#w"><span class="tabMainItem">display 5</span></li>
-      <li wj-tab-main="f#w"><span class="tabMainItem">display 6</span></li>
-      <li wj-tab-main="g#w"><span class="tabMainItem">display 7</span></li>
-      <li wj-tab-main="h#w"><span class="tabMainItem">display 8</span></li>
-    </ul>
-  </div>
+    <div class="tabBtn tac">
+        <ul class="fl_dib">
+            <li wj-tab-btn="a">1</li>
+            <li wj-tab-btn="b">2</li>
+            <li wj-tab-btn="c">3</li>
+            <li wj-tab-btn="d">4</li>
+        </ul>
+    </div>
+    <div class="tabMain">
+        <ul>
+            <li wj-tab-main="a"><span class="tabMainItem">display 1</span></li>
+            <li wj-tab-main="b"><span class="tabMainItem">display 2</span></li>
+            <li wj-tab-main="c"><span class="tabMainItem">display 3</span></li>
+            <li wj-tab-main="d"><span class="tabMainItem">display 4</span></li>
+        </ul>
+    </div>
+    <div class="tabBtn tac">
+        <ul class="fl_dib">
+            <li wj-tab-btn="e#w">5</li>
+            <li wj-tab-btn="f#w">6</li>
+            <li wj-tab-btn="g#w">7</li>
+            <li wj-tab-btn="h#w">8</li>
+        </ul>
+    </div>
+    <div class="tabMain">
+        <ul>
+            <li wj-tab-main="e#w"><span class="tabMainItem">display 5</span></li>
+            <li wj-tab-main="f#w"><span class="tabMainItem">display 6</span></li>
+            <li wj-tab-main="g#w"><span class="tabMainItem">display 7</span></li>
+            <li wj-tab-main="h#w"><span class="tabMainItem">display 8</span></li>
+        </ul>
+    </div>
 </body>
-<!-- <script src="js/jquery.min.js"></script> -->
+<!-- <script src="js/jquery.min.js"></script>
+<script src="js/tab.js"></script> -->
 <script src="src/tab.js"></script>
-<!-- <script src="js/tab.js"></script> -->
 <script>
     new Tab({
         selector: 'wj-tab',
+        auto: true,
         // currentClass: {
         //     default: ['current', ''],
         //     w: ['hover', '']
         // },
         currentClass: 'current',
-        defaultPos: 2,
+        // defaultPos: 2,
+        defaultPos: {
+            default: 1,
+            w: 2
+        },
+        currentWill: function () {
+            console.log('will',this);
+        },
+        currentDid: function () {
+            console.log('did');
+        },
         eventType: {
-          w: 'click'
+            w: 'hover'
         }
     })
 </script>
