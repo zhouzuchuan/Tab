@@ -30,6 +30,7 @@
             <li wj-tab-btn="f#w">6</li>
             <li wj-tab-btn="g#w">7</li>
             <li wj-tab-btn="h#w">8</li>
+            <li wj-tab-btn="t">t</li>
         </ul>
     </div>
     <div class="tabMain">
@@ -38,6 +39,7 @@
             <li wj-tab-main="f#w"><span class="tabMainItem">display 6</span></li>
             <li wj-tab-main="g#w"><span class="tabMainItem">display 7</span></li>
             <li wj-tab-main="h#w"><span class="tabMainItem">display 8</span></li>
+            <li wj-tab-main="t"><span class="tabMainItem">display t</span></li>
         </ul>
     </div>
 </body>
@@ -47,25 +49,34 @@
 <script>
     new Tab({
         selector: 'wj-tab',
-        auto: true,
+        currentClass: 'current',
         // currentClass: {
         //     default: ['current', ''],
         //     w: ['hover', '']
         // },
-        currentClass: 'current',
-        // defaultPos: 2,
+        auto: 500,
+        direction: {
+            default: 'left'
+        },
         defaultPos: {
             default: 1,
             w: 2
         },
-        currentWill: function () {
-            console.log('will',this);
-        },
-        currentDid: function () {
-            console.log('did');
-        },
         eventType: {
             w: 'hover'
+        },
+        leaveWill: function (nodeBtn, nodeMain, traceValue) {
+            // console.log('离开之前', nodeBtn , nodeMain, traceValue);
+        },
+        currentWill: function (nodeBtn, nodeMain, traceValue) {
+            if (traceValue === 'w') {
+                // console.log('选中之前', nodeBtn , nodeMain, traceValue);
+            }
+        },
+        currentDid: function (nodeBtn, nodeMain, traceValue) {
+            if (traceValue === 'default') {
+                // console.log('选中之后', nodeBtn , nodeMain, traceValue);
+            }
         }
     })
 </script>
