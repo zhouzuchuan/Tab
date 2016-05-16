@@ -10,7 +10,10 @@ var uglify          = require('gulp-uglify');
 var jshint          = require('gulp-jshint');
 var header          = require('gulp-header');
 
-var info = '/* git@github.com:zhouzuchuan/Tab.git */\n';
+var info = '/*\n' +
+  '* git@github.com:zhouzuchuan/Tab.git\n' +
+  '* https://github.com/zhouzuchuan/Tab\n' +
+  '*/\n';
 
 // js压缩
 gulp.task('js' , function () {
