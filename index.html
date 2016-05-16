@@ -45,21 +45,22 @@
 </body>
 <!-- <script src="js/jquery.min.js"></script>
 <script src="js/tab.js"></script> -->
-<script src="src/tab.js"></script>
+<!-- <script src="src/tab.js"></script> -->
+<script src="dest/tab.min.js"></script>
 <script>
     new Tab({
-        selector: 'wj-tab',
+        selector: ['wj-tab'],
         currentClass: 'current',
         // currentClass: {
-        //     default: ['current', ''],
+        //     defaults: ['current', ''],
         //     w: ['hover', '']
         // },
         auto: 500,
         direction: {
-            default: 'left'
+            defaults: 'left'
         },
         defaultPos: {
-            default: 1,
+            defaults: 1,
             w: 2
         },
         eventType: {
@@ -74,7 +75,7 @@
             }
         },
         currentDid: function (nodeBtn, nodeMain, traceValue) {
-            if (traceValue === 'default') {
+            if (traceValue === 'defaults') {
                 // console.log('选中之后', nodeBtn , nodeMain, traceValue);
             }
         }
