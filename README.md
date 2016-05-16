@@ -90,7 +90,7 @@ v 0.0.4
 ``` 参数
 指定对应选择器
 
-array 【['按钮的选择器', '区块的选择器']】 默认为 ['zzc-tab-btn', 'zzc-tab-main']
+array ['按钮的选择器', '区块的选择器'] 默认为 ['zzc-tab-btn', 'zzc-tab-main']
 ```
 ``` javascript
 selector: ['baidu-btn', 'taobao-main']      // baidu-btn, taobao-main
@@ -104,7 +104,7 @@ selector: 'taobao'                          // taobao-btn, taobao-main
 ``` 参数
 选中当前添加的class类
 
-array 【['按钮选中添加的class', '区块选中添加的class'] （若数组中只有一个子项 那么class都为这个子项）】 默认为 ['', '']
+array   ['按钮选中添加的class', '区块选中添加的class'] （若数组中只有一个子项 那么class都为这个子项） 默认为 ['', '']
 ```
 ``` javascript
 selector: ['current','active']    // current, active
@@ -178,6 +178,7 @@ eventType: {
 leaveWill: function (nodeBtn, nodeMain, traceValue) {
   console.log('离开之前', nodeBtn, '和', nodeMain)
 }
+```
 
 ### `currentWill`
 ``` 参数
